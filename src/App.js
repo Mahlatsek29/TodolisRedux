@@ -1,7 +1,5 @@
-
 import './App.css';
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
-// import Home from './Home';
 import Login from './Login';
 import Register from './Register';
 import { ToastContainer } from 'react-toastify';
@@ -17,10 +15,10 @@ const App = () => {
       <ToastContainer theme='coloured' position='top-center'></ToastContainer>
       <BrowserRouter>
         <Routes>
-          <Route path='/todo' element={<TodoPage/>}></Route>
+          <Route path='/' element={<TodoPage />} /> {/* Add this line for the root path */}
+          <Route path='/todo' element={<TodoPage />} />
           <Route path="/register" element={<Register />} />
           <Route path="/login" element={<Login />} />
-          {/* <Route path="/todo" element={< />} /> */}
         </Routes>
       </BrowserRouter>
     </div>
@@ -29,7 +27,7 @@ const App = () => {
 
 const TodoPage = () => {
   return (
-    <div className='container' style={{ backgroundColor: "#B0E0E6" }} p-4 mt-5>
+    <div className='container' style={{ backgroundColor: "#B0E0E6", padding: "4rem", marginTop: "5rem" }}>
       <h1>Todo List</h1>
       <AddTodoForm />
       <TodoList />
